@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-xs-12 text-left">
+    <a routerLink="/store" class="btn btn-primary btn-sm">Your Job offers</a>
+  </div>
+  
+  <!-- Current JobOffers workers -->
+  <div class="col-xs-12">
+    <div *ngIf="workers.length > 0; else no_workers;">
+      <div class="worker" *ngFor="let worker of workers">
+        <h4>{{worker.name}} {{worker.surname}}</h4>
+        <p>{{worker.email}}</p>
+      </div>
+    </div>
+    <ng-template #no_workers>
+      <h4 class="text-center text-warning">Your announce has no applicants yet</h4>
+    </ng-template>
+  </div>
+</div>

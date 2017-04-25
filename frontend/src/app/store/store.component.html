@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-12 text-right">
+    <a routerLink="/index" class="btn btn-primary btn-sm">Logout</a>
+  </div>
+  <div class="col-xs-12">
+    <h2>Welcome, Fabrizio</h2>
+    <p>For the sake of this test, we assume that we are logged in as the Store with id 1 "Fabrizio Daiquiri"</p>
+  </div>
+  
+  <!-- Current Store JobOffers -->
+  <div class="col-xs-12">
+    <div *ngIf="jobOffers.length > 0; else no_offers;">
+      <div class="job-offer" *ngFor="let jobOffer of jobOffers">
+        <h4>{{jobOffer.title}}</h4>
+        <span class="help-block">
+          {{jobOffer.created_at | date:'yyyy-MM-dd'}}
+          <br>
+          {{jobOffer.created_at | date:'HH:mm'}}</span>
+        <p>{{jobOffer.description}}</p>
+        <a class="btn btn-primary btn-sm" routerLink="/store/joboffers/{{jobOffer.id}}">List applicants</a>
+      </div>
+    </div>
+    <ng-template #no_offers>
+      <h4 class="text-center text-warning">You haven't created any JobOffer yet</h4>
+    </ng-template>
+  </div>
+</div>
