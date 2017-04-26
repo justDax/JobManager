@@ -16,6 +16,9 @@ class AllowCorsRequests
      */
     public function handle($request, Closure $next)
     {
+
+        Log::info($request->getMethod());
+
         if ($request->getMethod() == "OPTIONS") {
           $req = \Response::make('', 200);
         } else {
@@ -23,8 +26,8 @@ class AllowCorsRequests
         }
 
         $req->header('Access-Control-Allow-Origin', '*');
-        $req->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-        $req->header('Access-Control-Allow-Headers', 'Content-Type,Accept');
+        $req->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+        $req->header('Access-Control-Allow-Headers', $request->header('Access-Control-Request-Headers'));
 
 
         return $req;
