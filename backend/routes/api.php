@@ -31,8 +31,11 @@ Route::group(["namespace" => "api"], function(){
   Route::group(["namespace" => "workers", "prefix" => "", "middleware" => "api.workers"], function(){
     Route::get("alljoboffers", "JobOfferController@index");
     Route::post("joboffer/{id}/interest", "JobOfferController@createInterest");  
-    Route::options("joboffer/{id}/interest", "JobOfferController@createInterest");  
     Route::delete("joboffer/{id}/interest", "JobOfferController@destroyInterest");
+  });
+
+  Route::group(["middleware" => "api.workers"], function(){
+    Route::options('/{any}', function ($any) {})->where('any', '.*');
   });
 
 });
