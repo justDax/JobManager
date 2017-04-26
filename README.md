@@ -4,6 +4,7 @@ To run the two applications you'll need:
 - composer installed globally on your system accessible with the command "composer" from your command line
 - php
 - node and npm installed
+- mysql
 
 This has been tested with:
 - php 7.1.2
@@ -34,6 +35,11 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 this is the only difference from my local file and the example
+
+The database can be easilly created with the command  
+`php artisan db:setup`  
+that will create the database, run the migrations and the data seeding scripts
+
 
 start the laravel application with the command `php artisan serve`
 
