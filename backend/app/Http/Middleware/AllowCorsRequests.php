@@ -27,6 +27,7 @@ class AllowCorsRequests
 
         $req->header('Access-Control-Allow-Origin', '*');
         $req->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+        // for the sake of this test, blindly allows all the headers requested by the client
         $req->header('Access-Control-Allow-Headers', $request->header('Access-Control-Request-Headers'));
 
 
