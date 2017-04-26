@@ -13,7 +13,7 @@ import { Worker } from '../../worker/worker';
 
 export class StoreJobOfferComponent{
   id: number;
-  workers: Worker[] = [];
+  workers: Worker[];
 
   constructor(private restangular: Restangular, private route: ActivatedRoute) {
   }

@@ -14,7 +14,6 @@ var ngx_restangular_1 = require("ngx-restangular");
 var StoreComponent = (function () {
     function StoreComponent(restangular) {
         this.restangular = restangular;
-        this.jobOffers = [];
     }
     StoreComponent.prototype.ngOnInit = function () {
         var _this = this;

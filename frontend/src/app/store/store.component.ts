@@ -12,7 +12,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 
 export class StoreComponent { 
-  jobOffers: JobOffer[] = [];
+  jobOffers: JobOffer[];
 
   constructor(private restangular: Restangular) {
   }

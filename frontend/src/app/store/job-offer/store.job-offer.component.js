@@ -16,7 +16,6 @@ var StoreJobOfferComponent = (function () {
     function StoreJobOfferComponent(restangular, route) {
         this.restangular = restangular;
         this.route = route;
-        this.workers = [];
     }
     StoreJobOfferComponent.prototype.ngOnInit = function () {
         var _this = this;

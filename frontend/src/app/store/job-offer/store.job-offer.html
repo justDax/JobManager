@@ -5,14 +5,19 @@
   
   <!-- Current JobOffers workers -->
   <div class="col-xs-12">
-    <div *ngIf="workers.length > 0; else no_workers;">
-      <div class="worker" *ngFor="let worker of workers">
-        <h4>{{worker.name}} {{worker.surname}}</h4>
-        <p>{{worker.email}}</p>
+    <div *ngIf="workers; else loading;">
+      <div *ngIf="workers.length > 0; else no_workers;">
+        <div class="worker" *ngFor="let worker of workers">
+          <h4>{{worker.name}} {{worker.surname}}</h4>
+          <p>{{worker.email}}</p>
+        </div>
       </div>
+      <ng-template #no_workers>
+        <h4 class="text-center text-warning">Your announce has no applicants yet</h4>
+      </ng-template>
     </div>
-    <ng-template #no_workers>
-      <h4 class="text-center text-warning">Your announce has no applicants yet</h4>
+    <ng-template #loading>
+      <h4 class="text-center text-warning">Loading applicants...</h4>
     </ng-template>
   </div>
 </div>
